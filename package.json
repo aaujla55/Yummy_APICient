@@ -32,7 +32,7 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jishnusundar/CafeCentennial.git"
+    "url": "git+https://github.com/aaujla55/Yummy_APICient.git"
   },
   "keywords": [
     "Node.js",
@@ -42,9 +42,9 @@
   "author": "Jishnu, Shahid, Amandeep, Max, Karuna",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jishnusundar/CafeCentennial/issues"
+    "url": "https://github.com/aaujla55/Yummy_APICient/issues"
   },
-  "homepage": "https://github.com/jishnusundar/CafeCentennial#readme",
+  "homepage": "https://github.com/aaujla55/Yummy_APICient#readme",
   "devDependencies": {
     "@types/body-parser": "0.0.34",
     "@types/bootstrap": "^3.3.32",
