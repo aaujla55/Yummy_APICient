@@ -93,10 +93,11 @@ table {
 }
 .menu-icon
 {
-    color: #fff;
+    color: #FFB03B;
     font-size: 30px;
     margin-top: 30px;
     cursor: pointer;
+    margin-right:30px;
 }
 
 .header-h {
