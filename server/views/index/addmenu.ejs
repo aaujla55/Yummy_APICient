@@ -1,0 +1,84 @@
+<% include ../partials/header.ejs %>
+ 
+ <!-- contact -->
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1 class="header-h">Menu</h1>
+        </div>
+      </div>
+      <div class="row">
+       
+        <div class="col-md-12 text-center">
+          <form action="" method="post" role="form" class="contactForm">
+            <div id="sendmessage">Your booking request has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <div class="col-md-6 col-sm-6 contact-form pad-form">
+              <div class="form-group label-floating is-empty">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Menu Name" />
+                <div class="validation"></div>
+              </div>
+
+            </div>
+            <div class="col-md-6 col-sm-6 contact-form">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Menu Description" />
+                <div class="validation"></div>
+              </div>
+            </div>
+        
+            <div class="col-md-6 col-sm-6 contact-form">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Calories" />
+                <div class="validation"></div>
+              </div>
+            </div>
+
+             <div class="col-md-6 col-sm-6 contact-form">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Price" />
+                <div class="validation"></div>
+              </div>
+            </div>
+
+            
+
+            
+            <div class="col-md-12 contact-form">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Breakfast</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Lunch</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Dinner</label>
+                </div>
+                
+            </div>
+
+            <div class="col-md-12 contact-form">
+              <div class="form-group">
+               <input type="checkbox" class="form-check-input" id="exampleCheck1">
+               <label class="form-check-label" for="exampleCheck1">Is Recommended</label>
+                <div class="validation"></div>
+              </div>
+            </div>
+            
+            <div class="col-md-12 btnpad">
+              <div class="contacts-btn-pad">
+                <button class="contacts-btn">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+         </div>
+      </div>
+    </div>
+  </section>
+  <!-- / contact -->
+   <% include ../partials/footer.ejs %>

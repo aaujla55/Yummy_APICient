@@ -58,10 +58,15 @@ app.get('/manageRestaurants',(req,res,next) => {
 
 app.get('/managemenus',(req,res,next) => {
   return res.render('index/managemenus',{
-  title:'Add a Menu'
+  title:'Manage Menu'
   });
 });
 
+app.get('/addmenu',(req,res,next) => {
+  return res.render('index/addmenu',{
+  title:'Add a Menu'
+  });
+});
 
 module.exports = app; 
 
