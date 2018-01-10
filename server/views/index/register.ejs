@@ -1,0 +1,64 @@
+  <% include ../partials/header.ejs %>
+ 
+ <!-- contact -->
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1 class="header-h">Register with Us</h1>
+          <p class="header-p">Register as admin or regular customer </p>
+        </div>
+      </div>
+      <div class="row">
+       
+        <div class="col-md-12 text-center">
+          <form action="" method="post" role="form" class="contactForm">
+            <div id="sendmessage">Your booking request has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <div class="col-md-6 col-sm-6 contact-form pad-form">
+              <div class="form-group label-floating is-empty">
+                <input type="text" name="name" class="form-control" id="name" placeholder="First Name" />
+                <div class="validation"></div>
+              </div>
+
+            </div>
+            <div class="col-md-6 col-sm-6 contact-form">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Last Name" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 contact-form pad-form">
+              <div class="form-group">
+                <input type="email" class="form-control label-floating is-empty" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 contact-form">
+              <div class="form-group">
+                <input type="password" name="name" class="form-control" id="name" placeholder="Password" />
+                <div class="validation"></div>
+              </div>
+            </div>
+
+            <div class="col-md-12 contact-form">
+              <div class="form-group">
+               <input type="checkbox" class="form-check-input" id="exampleCheck1">
+               <label class="form-check-label" for="exampleCheck1">I am admin</label>
+                <div class="validation"></div>
+              </div>
+            </div>
+            
+            <div class="col-md-12 btnpad">
+              <div class="contacts-btn-pad">
+                <button class="contacts-btn">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+         </div>
+      </div>
+    </div>
+  </section>
+  <!-- / contact -->
+   <% include ../partials/footer.ejs %>

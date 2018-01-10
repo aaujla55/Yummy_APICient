@@ -20,6 +20,12 @@ app.get('/',(req,res,next) => {
   });
 });
 
+app.get('/register',(req,res,next) => {
+  return res.render('index/register',{
+  title:'Register'
+  });
+});
+
 app.get('/menu',(req,res,next) => {
   return res.render('index/menu',{
   title:'Menu'
