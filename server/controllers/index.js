@@ -28,7 +28,19 @@ app.get('/menu',(req,res,next) => {
 
 app.get('/restaurant',(req,res,next) => {
   return res.render('index/restaurant',{
+  title:'Restaurant'
+  });
+});
+
+app.get('/restaurants',(req,res,next) => {
+  return res.render('index/restaurants',{
   title:'Restaurants'
+  });
+});
+
+app.get('/addReview',(req,res,next) => {
+  return res.render('index/addReview',{
+  title:'Add a review'
   });
 });
 

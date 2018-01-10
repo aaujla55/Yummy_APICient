@@ -1,12 +1,12 @@
  <% include ../partials/header.ejs %>
 
-<!-- event -->
+  <!-- Restaurant -->
   <section id="event">
     <div class="bg-color" class="section-padding">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-center" style="padding:60px;">
-            <h1 class="header-h">Up Coming events</h1>
+            <h1 class="header-h">Restaurant Name</h1>
             <p class="header-p">Decorations 100% complete here</p>
           </div>
           <div class="col-md-12" style="padding-bottom:60px;">
@@ -16,16 +16,22 @@
               </div>
               <div class="col-md-6 col-sm-6 details-text">
                 <div class="content-holder">
-                  <h2>Joyful party</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore eos suscipit earum voluptas aliquam recusandae, quae iure adipisci, inventore quia, quos delectus quaerat praesentium id expedita nihil illo accusantium, tempora.</p>
-                  <address>
-                              <strong>Place: </strong>
+                
+                  <h2>Cuisine Type</h2>
+                   <address>
+                              <strong>Address: </strong>
                               1612 Collins Str, Victoria 8007
                               <br>
-                              <strong>Time: </strong>
+                              <strong>Timings: </strong>
                               07:30pm
                             </address>
-                  <a class="btn btn-imfo btn-read-more" href="events-details.html">Read more</a>
+                  <address><strong>Recommended Items:</strong></address>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore eos suscipit earum voluptas aliquam recusandae, quae iure adipisci, inventore quia, quos delectus quaerat praesentium id expedita nihil illo accusantium, tempora.</p>
+                  <address><strong>Coupon Code</strong> 676767</address>
+                  <p>Active From : date</p>
+                   <p>End date : date</p>
+                 
+                  <a class="btn btn-imfo btn-read-more" href="/addReview">Add a review</a>
                 </div>
               </div>
             </div>
@@ -35,4 +41,24 @@
     </div>
   </section>
   <!--/ event -->
+
+    <!--review-->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row">
+      
+        <div class="col-md-12 text-center marb-35">
+          <h1 class="header-h">Reviews</h1>
+      <% for(var n=0; n<10; n++) {%>
+        <div class="breakfast menu-restaurant">
+            <div class="about-info">
+              <h2 class="heading">It is an excellent restaurant</h2>
+              <p>By: Ammu Stars: 5</p>
+            </div>
+          </div>
+       <% } %>
+      </div>
+    </div>
+  </section>
+  <!--/review-->
  <% include ../partials/footer.ejs %>

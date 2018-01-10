@@ -477,3 +477,47 @@ table {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+.restaurant-name{
+    width: 50%;
+    float: left;
+    padding: 15px;
+    position: relative;
+}
+.restaurant-name .restaurant-title {
+    float: left;
+    font-family: Montserrat,arial;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FFB03B;
+}
+.restaurant-name .restaurant-line {
+    position: absolute;
+    bottom: 6px;
+    border-bottom: 1px dotted rgba(0,0,0,.3);
+    margin-left: .6rem;
+    margin-right: .6rem;
+}
+.restaurant-name .restaurant-price {
+    font-weight: 600;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.restaurant-name .restaurant-subtitle {
+    display: block;
+    float: left;
+    color: #B1B1B1;
+    font-family: Satisfy,'Open Sans',arial;
+}
+.restaurant-name span.clearfix {
+    position: relative;
+    display: block;
+}
+
+.my-center-div {
+    width:80%;
+    margin-left:20%;
+    margin-right:20%;
+    
+}
