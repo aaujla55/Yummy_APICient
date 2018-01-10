@@ -14,6 +14,8 @@ let passportlocal = require("passport-local");
 let Localstrategy = passportlocal.Strategy;
 let flash = require("connect-flash"); //display errors/login messages
 
+// define controllers
+let indexController = require('./controllers/index'); // top level routes
 // import "mongoose"
 let mongoose = require('mongoose');
 
@@ -28,16 +30,6 @@ db.once('open', () => {
   console.log("Conneced to MongoDB...");
 });
 
-// define routers
-let index = require('./routes/index'); // top level routes
-
-/*let auth = require('./routes/auth');
-let profile = require('./routes/profile');
-let survey = require('./routes/surveys');
-let respond = require('./routes/respond');*/
-
-
-
 
 let app = express();
 
@@ -45,6 +37,8 @@ let app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// redirect incoming requests routes to appropriate controllers
+app.use('/', indexController);
 
 //app.use(favicon(path.join(__dirname, '../client','icon.jpg')));
 app.use(logger('dev'));
@@ -65,12 +59,6 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-// route redirects
-app.use('/', index);
-/*app.use('/auth',auth);
-app.use('/profile',profile);
-app.use('/survey',survey);
-app.use('/respond',respond);*/
 
 //Passport User Configuration
 let UserModel = require('./models/users')

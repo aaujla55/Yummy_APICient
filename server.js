@@ -1,7 +1,7 @@
 
 
 var app = require('./server/app');
-var debug = require('debug')('cafe_centennial:server');
+var debug = require('debug')('yummy:server');
 var http = require('http');
 
 /**
