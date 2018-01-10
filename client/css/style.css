@@ -551,3 +551,13 @@ table {
     border: none;
     border-bottom: 1px solid;
 }
+
+.edit-menu-subtile a{
+    color:rgba(0,0,0,.3);
+    font-family: Satisfy,'Open Sans',arial;
+}
+
+.edit-menu-subtile a:hover{
+     color: #FFB03B;
+    text-decoration: underline;
+}
