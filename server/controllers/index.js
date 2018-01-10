@@ -44,6 +44,19 @@ app.get('/addReview',(req,res,next) => {
   });
 });
 
+app.get('/manageRestaurants',(req,res,next) => {
+  return res.render('index/manageRestaurants',{
+  title:'Add a Restaurant'
+  });
+});
+
+app.get('/managemenus',(req,res,next) => {
+  return res.render('index/managemenus',{
+  title:'Add a Menu'
+  });
+});
+
+
 module.exports = app; 
 
 
