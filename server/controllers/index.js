@@ -140,38 +140,41 @@ client.get("https://api-project-283483524962.appspot.com/api/MenuItems/572510778
   console.log(data);
   // raw response 
 
-  for(var i in data.menuItems)
-  {
-  itemid.push(data.menuItems[i].item_id);
-  menuname.push(data.menuItems[i].name);
-  restaurantid.push(data.menuItems[i].r_id);
-  userid.push(data.menuItems[i].u_id);
-  menudescription.push(data.menuItems[i].description);
-  calories.push(data.menuItems[i].calories);
-  price.push(data.menuItems[i].itemId);
-  timings.push(data.menuItems[i].timing);
-  isRecommended.push(data.menuItems[i].recemmended);
-  type.push(data.menuItems[i].type)
-
-  }
+ 
   console.log(menuname);
   return res.render('index/managemenus',{
     title:'Manage Menu',
-    itemId:itemid,
-    userId:userid,
-    restaurantId:restaurantid,
-    menuName:menuname,
-    desc:menudescription,
-    calories: calories,
-    price:price,
-    time:timings,
-    isrecommended:isRecommended,
-    menuType:type
+    menuItems:data.menuItems
     });
 });
 
   
 });
+
+app.get('/delete/:item_id',(req,res,next) => { 
+  // set content-type header and data as json in args parameter 
+ 
+    client.post("https://api-project-283483524962.appspot.com/api/MenuItems/"+req.params.item_id, function (data, response) {
+      // parsed response body as js object 
+     console.log(data);
+    
+    });
+
+    // registering remote methods 
+    client.registerMethod("postMethod", "https://api-project-283483524962.appspot.com/api/MenuItems/"+req.params.item_id, "DELETE");
+
+    client.methods.postMethod(function (data, response) {
+      // parsed response body as js object
+      console.log(data);
+    
+      return res.redirect('/managemenus');
+  
+    });
+   
+   
+});
+
+
 
 app.get('/addmenu',(req,res,next) => {
   return res.render('index/addmenu',{
