@@ -78,18 +78,15 @@ app.post('/register',(req,res,next) => {
     console.log("=======================================================");
      
     
-    x = data.path[0].id;
-    y = data.path[0].idTypeCase;
+    x = data.user.u_id;
+    y = data.user.userType;
     console.log( x),
     console.log(userid)
       userid=x;
       usertype = y;
     });
-    return res.render('index/managemenus',{
-        title:'Register',
-        userId:userid,
-        userType: usertype
-    });
+    return res.redirect('/managemenus');
+   
     
 });
 
@@ -174,12 +171,42 @@ app.get('/delete/:item_id',(req,res,next) => {
    
 });
 
-
-
-app.get('/addmenu',(req,res,next) => {
+app.get('/edit/:item_id',(req,res,next) => { 
   return res.render('index/addmenu',{
-  title:'Add a Menu'
-  });
+    title:'Add a Menu',
+    itemid: req.params.item_id
+    });
 });
+
+app.post('/addmenus',(req,res,next) => {
+  var myObj, i, j, x = "";
+  var args = {
+    data: {  "item_id": req.param.itemid,
+    "r_id": 5725107787923456,
+    "u_id": 6200439200546816,
+    "name": req.body.menuname,
+    "description": req.body.description,
+    "calories": req.body.calories,
+    "price": req.body.price,
+    "timing": 10-12,
+    "recemmended": req.body.isRecommended,
+    "type": req.body.type},
+    headers: { "Content-Type": "application/json" }
+  }
+
+     // registering remote methods 
+    client.registerMethod("postMethod", "https://api-project-283483524962.appspot.com/api/MenuItems/"+req.param.itemid, "PUT");
+    client.methods.postMethod(args,function (data, response) {
+      console.log("===========================================================================");
+      // parsed response body as js object
+      console.log(data);
+      return res.redirect('/managemenus');
+  
+    });
+   
+
+
+});
+
 
 module.exports = app; 

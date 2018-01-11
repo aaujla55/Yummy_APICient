@@ -11,33 +11,35 @@
       <div class="row">
        
         <div class="col-md-12 text-center">
-          <form action="" method="post" role="form" class="contactForm">
+        
+          <form method="post" role="form" class="contactForm">
+          <input type="hidden" name="itemid" value="<%= itemid %>">
             <div id="sendmessage">Your booking request has been sent. Thank you!</div>
             <div id="errormessage"></div>
             <div class="col-md-6 col-sm-6 contact-form pad-form">
               <div class="form-group label-floating is-empty">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Menu Name" />
+                <input type="text" name="menuname" class="form-control" id="name" placeholder="Menu Name" />
                 <div class="validation"></div>
               </div>
 
             </div>
             <div class="col-md-6 col-sm-6 contact-form">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Menu Description" />
+                <input type="text" name="menudes" class="form-control" id="name" placeholder="Menu Description" />
                 <div class="validation"></div>
               </div>
             </div>
         
             <div class="col-md-6 col-sm-6 contact-form">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Calories" />
+                <input type="text" name="calories" class="form-control" id="name" placeholder="Calories" />
                 <div class="validation"></div>
               </div>
             </div>
 
              <div class="col-md-6 col-sm-6 contact-form">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Price" />
+                <input type="text" name="price" class="form-control" id="name" placeholder="Price" />
                 <div class="validation"></div>
               </div>
             </div>
@@ -46,15 +48,15 @@
             
             <div class="col-md-12 contact-form">
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Breakfast</label>
                 </div>
                 <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="option2">
                 <label class="form-check-label" for="inlineRadio2">Lunch</label>
                 </div>
                 <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
+                <input class="form-check-input" type="radio" name="type" id="inlineRadio3" value="option2">
                 <label class="form-check-label" for="inlineRadio2">Dinner</label>
                 </div>
                 
