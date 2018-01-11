@@ -3,6 +3,19 @@ let passport = require('passport');
 
 let express = require('express');
 let app = express.Router();
+var Client = require('node-rest-client').Client;
+
+var client = new Client();
+
+var bodyParser = require('body-parser');
+ 
+ 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+ 
+// parse application/json
+app.use(bodyParser.json());
+ 
 
 //module.exports.displayLogin = (req,res,next) => {
  // return res.render('index/login',{
@@ -13,6 +26,7 @@ let app = express.Router();
 //}
 
 // Just use app.get to attach view files to a route
+//https://api-project-283483524962.appspot.com/api/User
 //--------------------------------- ROUTERS---------------------------------
 app.get('/',(req,res,next) => {
   return res.render('index/login',{
@@ -26,6 +40,61 @@ app.get('/register',(req,res,next) => {
   });
 });
 
+  //Example POST method invocation 
+var Client = require('node-rest-client').Client;
+
+var client = new Client();
+
+
+
+
+
+app.post('/register',(req,res,next) => {
+  var userid="",usertype="";
+  var myObj, i, j, x = "";
+  var args = {
+    data: { "firstname": req.body.firstname,"lastname":req.body.lastname,"email":req.body.email,"password":req.body.password,"usertype":req.body.usertyperadio},
+    headers: { "Content-Type": "application/json" }
+  };
+  // set content-type header and data as json in args parameter 
+  console.log(req.body);
+    client.post("http://api-project-283483524962.appspot.com/api/User/", args, function (data, response) {
+      // parsed response body as js object 
+     console.log(data);
+    
+    // console.log(data[0].id);
+      // raw response 
+      //console.log(response);
+    });
+
+    // registering remote methods 
+    client.registerMethod("postMethod", "http://api-project-283483524962.appspot.com/api/User/", "POST");
+
+    client.methods.postMethod(args, function (data, response) {
+      // parsed response body as js object
+      console.log(data);
+      // raw response 
+    
+    // console.log(response);
+    console.log("=======================================================");
+     
+    
+    x = data.path[0].id;
+    y = data.path[0].idTypeCase;
+    console.log( x),
+    console.log(userid)
+      userid=x;
+      usertype = y;
+    });
+    return res.render('index/restaurants',{
+        title:'Register',
+        userId:userid,
+        userType: usertype
+    });
+    
+});
+
+
 app.get('/menu',(req,res,next) => {
   return res.render('index/menu',{
   title:'Menu'
@@ -33,6 +102,12 @@ app.get('/menu',(req,res,next) => {
 });
 
 app.get('/restaurant',(req,res,next) => {
+  return res.render('index/restaurant',{
+  title:'Restaurant'
+  });
+});
+
+app.post('/restaurant',(req,res,next) => {
   return res.render('index/restaurant',{
   title:'Restaurant'
   });
@@ -69,6 +144,3 @@ app.get('/addmenu',(req,res,next) => {
 });
 
 module.exports = app; 
-
-
-

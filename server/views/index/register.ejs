@@ -12,19 +12,19 @@
       <div class="row">
        
         <div class="col-md-12 text-center">
-          <form action="" method="post" role="form" class="contactForm">
+          <form method="post" role="form" class="contactForm">
             <div id="sendmessage">Your booking request has been sent. Thank you!</div>
             <div id="errormessage"></div>
             <div class="col-md-6 col-sm-6 contact-form pad-form">
               <div class="form-group label-floating is-empty">
-                <input type="text" name="name" class="form-control" id="name" placeholder="First Name" />
+                <input type="text" name="firstname" class="form-control" id="name" placeholder="First Name" />
                 <div class="validation"></div>
               </div>
 
             </div>
             <div class="col-md-6 col-sm-6 contact-form">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Last Name" />
+                <input type="text" name="lastname" class="form-control" id="name" placeholder="Last Name" />
                 <div class="validation"></div>
               </div>
             </div>
@@ -36,22 +36,25 @@
             </div>
             <div class="col-md-6 col-sm-6 contact-form">
               <div class="form-group">
-                <input type="password" name="name" class="form-control" id="name" placeholder="Password" />
+                <input type="password" name="password" class="form-control" id="name" placeholder="Password" />
                 <div class="validation"></div>
               </div>
             </div>
 
-            <div class="col-md-12 contact-form">
-              <div class="form-group">
-               <input type="checkbox" class="form-check-input" id="exampleCheck1">
-               <label class="form-check-label" for="exampleCheck1">I am admin</label>
-                <div class="validation"></div>
-              </div>
+           <div class="col-md-12 contact-form">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="usertyperadio" id="inlineRadio1" value="2">
+                <label class="form-check-label" for="inlineRadio1">Admin</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="usertyperadio" id="inlineRadio2" value="1">
+                <label class="form-check-label" for="inlineRadio2">Regular User</label>
+                </div>
             </div>
             
             <div class="col-md-12 btnpad">
               <div class="contacts-btn-pad">
-                <button class="contacts-btn">Submit</button>
+                <button type="submit" class="contacts-btn">Submit</button>
               </div>
             </div>
           </form>
