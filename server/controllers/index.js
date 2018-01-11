@@ -9,7 +9,7 @@ var client = new Client();
 
 var bodyParser = require('body-parser');
  
- 
+var userid="",usertype="";
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
  
@@ -50,7 +50,6 @@ var client = new Client();
 
 
 app.post('/register',(req,res,next) => {
-  var userid="",usertype="";
   var myObj, i, j, x = "";
   var args = {
     data: { "firstname": req.body.firstname,"lastname":req.body.lastname,"email":req.body.email,"password":req.body.password,"usertype":req.body.usertyperadio},
@@ -86,7 +85,7 @@ app.post('/register',(req,res,next) => {
       userid=x;
       usertype = y;
     });
-    return res.render('index/restaurants',{
+    return res.render('index/managemenus',{
         title:'Register',
         userId:userid,
         userType: usertype
@@ -132,9 +131,46 @@ app.get('/manageRestaurants',(req,res,next) => {
 });
 
 app.get('/managemenus',(req,res,next) => {
+  var itemid=[],userid=[], restaurantid=[], menuname=[], menudescription=[],calories=[], price=[], timings=[],type=[];
+  var isRecommended=[];
+
+  // direct way 
+client.get("https://api-project-283483524962.appspot.com/api/MenuItems/5725107787923456", function (data, response) {
+  // parsed response body as js object 
+  console.log(data);
+  // raw response 
+
+  for(var i in data.menuItems)
+  {
+  itemid.push(data.menuItems[i].item_id);
+  menuname.push(data.menuItems[i].name);
+  restaurantid.push(data.menuItems[i].r_id);
+  userid.push(data.menuItems[i].u_id);
+  menudescription.push(data.menuItems[i].description);
+  calories.push(data.menuItems[i].calories);
+  price.push(data.menuItems[i].itemId);
+  timings.push(data.menuItems[i].timing);
+  isRecommended.push(data.menuItems[i].recemmended);
+  type.push(data.menuItems[i].type)
+
+  }
+  console.log(menuname);
   return res.render('index/managemenus',{
-  title:'Manage Menu'
-  });
+    title:'Manage Menu',
+    itemId:itemid,
+    userId:userid,
+    restaurantId:restaurantid,
+    menuName:menuname,
+    desc:menudescription,
+    calories: calories,
+    price:price,
+    time:timings,
+    isrecommended:isRecommended,
+    menuType:type
+    });
+});
+
+  
 });
 
 app.get('/addmenu',(req,res,next) => {

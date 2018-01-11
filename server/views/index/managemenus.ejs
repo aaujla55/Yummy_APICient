@@ -6,21 +6,23 @@
       <div class="row">
         <div class="col-md-12 text-center marb-35">
           <h1 class="header-h">Current Menu's</h1>
-          <p class="header-p">restaurant name</p>
+          <p class="header-p">restaurantId</p>
+           <p class="header-p"><%=  %></p>
          <a class="header-p" href="/addmenu">Add a new Item</a>
         </div>
 
         <div id="menu-wrapper">
-  <% for(var n=0; n<10; n++) {%>
-          <div class="menu-restaurant">
-            <span class="clearfix">
-              <a class="menu-title" href="#">Food Item Name</a>
-              <span style="left: 166px; right: 44px;" class="menu-line"></span>
-              <span class="menu-price">$20.99</span>
-            </span>
-            <span class="edit-menu-subtile"><a href="#">Edit</a></span>
-            <span class="edit-menu-subtile"><a href="#">Delete</a></span>
-          </div>
+    <% for(var count=0; count< menuName.length; count++) {%>
+            <div class="menu-restaurant">
+                <span class="clearfix">
+                <a class="menu-title" href="#"><%= menuName[count] %></a>
+                <span style="left: 166px; right: 44px;" class="menu-line"></span>
+                 <% for(var i=0; i< price.length; i++) {%>
+                <span class="menu-price">$price[i]</span>
+                </span>
+                <span class="edit-menu-subtile"><a href="#">Edit</a></span>
+                <span class="edit-menu-subtile"><a href="#">Delete</a></span>
+            </div>
        <% } %>
 
       </div>
